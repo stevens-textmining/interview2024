@@ -1,11 +1,17 @@
 How to run joern for a git repo with a diff patch:
 
+## 0. Unpack vultrigger_datasample_path
+
+```bash
+tar xvf vultrigger_datasample.tar.gz
+```
+
 ## 1. Import the docker container
 
 ```bash
 docker pull hkadxqq2/vultrigger_fork:latest your_image_name # please give it a name different from vultrigger:v1.0
 
-docker run -v /your_vultrigger_datasample_path:/data/ -it your_image_name /bin/bash # this will create a docker image 
+docker run -v ./vultrigger_datasample/:/data/ -it your_image_name /bin/bash # this will create a docker image where vultrigger_datasample is mounted under /data/
 
 docker ps -a # this will show all the docker containers, including the ID of the container you just built
 
