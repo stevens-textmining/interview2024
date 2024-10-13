@@ -32,10 +32,10 @@ First change `config.json`'s `all_test_code` to your repo name, e.g., :
 
 ```json
 "all_test_code":{
-        "all_diff_path":"/data/data/C-Diffs/neomutt@@neomutt/",
-        "all_new_path":"/data/data/C-Non_Vulnerable_Files/neomutt@@neomutt/",
-        "all_old_path":"/data/data/C-Vulnerable_Files/neomutt@@neomutt/",
-        "all_dep_path":"/data/data/Dependency_Files/"
+        "all_diff_path":"/data/patch_db/data/C-Diffs/neomutt@@neomutt/",
+        "all_new_path":"/data/patch_db/data/C-Non_Vulnerable_Files/neomutt@@neomutt/",
+        "all_old_path":"/data/patch_db/data/C-Vulnerable_Files/neomutt@@neomutt/",
+        "all_dep_path":"/data/patch_db/data/Dependency_Files/"
     }
 ```
 
