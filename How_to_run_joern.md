@@ -143,24 +143,3 @@ Then you can start querying the call graph:
 >>[u'testCode/pop.c']
 ```
 
-## 5. How to run python3.9 inside of the container
-
-The container has a miniconda Python 3.9 environment, you can activate it under the container using the following command (so you can run joern and the notebook under the same container). I have not yet figured out how to run Jupyter notebook inside of the remote running docker container, but Python works. Since python works, you can choose to clone the oneday_align project to be inside of Docker. Later we will do so and change the call graph part (e.g., mutt_bcache_del (bcache.c: 256) <- cache_id (pop.c:75) <- pop_fetch_headers (pop.c: 307) <- pop_open_mailbox (pop.c: 478), pop_check_mailbox (pop.c: 852)) from manually obtained by the annotator to automatically obtained by LLM agents. 
-
-```bash
-source ~/.bashrc
-source activate base
-source activate py39
-```
-## 6. How to run docker to access an outside directory (ie mount -v)
-
-```bash
-docker run -v your_local_directory:docker_directory -it your_image /bin/bash
-```
-The outside directory can be found under docker_directory inside of the container
-
-## 7. How to run remote container using VSCode:
-
-First, install the 'Dev Containers' plugin on VSCode. 
-
-First make sure your container is running, then in VSCode remote ssh connection, type command+shift+P (command pallette) -> Dev Containers: Attach to a running container
