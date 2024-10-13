@@ -26,38 +26,15 @@ docker exec -it container_sha /bin/bash # after this you should see root@SHA/
 cd /home/
 ```
 
-## 2. Store the .diff for each file under /data/C-Diffs/neomutt/:
-
-Before the following steps, you need to change the `all_test_code` in `config.json` to the repo name you are testing. 
-
-```bash
-cd /home/VulTrigger/VulTrigger/gitrepos
-git clone https://github.com/neomutt/neomutt.git
-mv neomutt neo_mutt_git
-cd neo_mutt_git
-mkdir /data/C-Diffs/neomutt/
-git show {commit_id} > /home/VulTrigger/VulTrigger/data/C-Diffs/neomutt/diff.txt
-```
-
-then separate the diff.txt into diff based on the file. For example, for this commit: https://github.com/neomutt/neomutt/commit/9bfab35522301794483f8f9ed60820bdec9be59e, separate them into 2 files:
-
-`./data/C-Diffs/neomutt/CVE-2018-14363/CVE-2018-14363_CWE-22_9bfab35522301794483f8f9ed60820bdec9be59e_newsrc.c_.diff`
-
-and
-
-`./data/C-Diffs/neomutt/CVE-2018-14363/CVE-2018-14363_CWE-22_9bfab35522301794483f8f9ed60820bdec9be59e_pop.c_.diff`
-
-each contains only the diff in that file.
-
-## 2.5 How to obtain the critical variable of the diff patch
+## 2 How to obtain the critical variable of the diff patch
 
 First change `config.json`'s `all_test_code` to your repo name, e.g., :
 
 ```json
 "all_test_code":{
-        "all_diff_path":"/home/VulTrigger/VulTrigger/data/C-Diffs/neomutt/",
-        "all_new_path":"/home/VulTrigger/VulTrigger/data/C-Non_Vulnerable_Files/neomutt/",
-        "all_old_path":"/home/VulTrigger/VulTrigger/data/C-Vulnerable_Files/neomutt/",
+        "all_diff_path":"/home/VulTrigger/VulTrigger/data/C-Diffs/neomutt@@neomutt/",
+        "all_new_path":"/home/VulTrigger/VulTrigger/data/C-Non_Vulnerable_Files/neomutt@@neomutt/",
+        "all_old_path":"/home/VulTrigger/VulTrigger/data/C-Vulnerable_Files/neomutt@@neomutt/",
         "all_dep_path":"/home/VulTrigger/VulTrigger/data/Dependency_Files/"
     }
 ```
