@@ -20,7 +20,7 @@ docker exec -it container_sha /bin/bash # after this you should see root@SHA/
 cd /home/
 ```
 
-## 2. Store the .diff for each file under ./data/C-Diffs/neomutt/:
+## 2. Store the .diff for each file under /data/C-Diffs/neomutt/:
 
 Before the following steps, you need to change the `all_test_code` in `config.json` to the repo name you are testing. 
 
@@ -29,7 +29,7 @@ cd /home/VulTrigger/VulTrigger/gitrepos
 git clone https://github.com/neomutt/neomutt.git
 mv neomutt neo_mutt_git
 cd neo_mutt_git
-mkdir /home/VulTrigger/VulTrigger/data/C-Diffs/neomutt/
+mkdir /data/C-Diffs/neomutt/
 git show {commit_id} > /home/VulTrigger/VulTrigger/data/C-Diffs/neomutt/diff.txt
 ```
 
