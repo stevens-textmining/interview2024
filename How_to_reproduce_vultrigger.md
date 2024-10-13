@@ -2,6 +2,8 @@ How to run joern for a git repo with a diff patch:
 
 ## 0. Unpack vultrigger_datasample.tar.gz
 
+Download vultrigger_datasample.tar.gz from https://drive.google.com/file/d/1SE8NEH9vKXQbQ8WmorTlvePieuE-NEt9/view?usp=sharing
+
 ```bash
 tar xvf vultrigger_datasample.tar.gz
 ```
