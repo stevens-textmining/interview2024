@@ -20,36 +20,6 @@ docker exec -it container_sha /bin/bash # after this you should see root@SHA/
 cd /home/
 ```
 
-To start with a CVE, please use the following code in `general_agent.ipynb` notebook, change the 0 to 1, 2, ..., for example, for 0, the CVE ID is CVE-2018-14363 and the project name is neomutt. 
-
-```Python
-explain_agent = ExplainAgent(agent_executor)
-CVE_ID, vulnerability_description, owner, repo, bigvul_file_path, commit_id, func_before, diff_patch = get_cve_data_from_data("CWE-22", 0, cve2desc, idx_list, data)
-
-repo_url = f"http://github.com/{owner}/{repo}/"
-#file_path = f"newsrc.c"
-vulnerability_name = "path traversal vulnerability"
-parent_commit_id = get_parent_commit(owner, repo, commit_id)[0]
-
-print("The commit id is: ", commit_id)
-print(f"The commit page is: {repo_url}commit/{commit_id}")
-print(f"Vulnerability description: {vulnerability_description}")
-print(f"URL of the NVD: https://nvd.nist.gov/vuln/detail/{CVE_ID}")
-print(f"Parent commit id: {parent_commit_id}")
-```
-
-The output of the code is below, which gives you the project name `neomutt` and the commit ID `9bfab35522301794483f8f9ed60820bdec9be59e` to be used below. 
-
-```
-Requesting URL: https://api.github.com/repos/neomutt/neomutt/commits/9bfab35522301794483f8f9ed60820bdec9be59e
-Response status code: 200
-The commit id is:  9bfab35522301794483f8f9ed60820bdec9be59e
-The commit page is: http://github.com/neomutt/neomutt/commit/9bfab35522301794483f8f9ed60820bdec9be59e
-Vulnerability description: An issue was discovered in NeoMutt before 2018-07-16. newsrc.c does not properly restrict '/' characters that may have unsafe interaction with cache pathnames.
-URL of the NVD: https://nvd.nist.gov/vuln/detail/CVE-2018-14363
-Parent commit id: 98aad9c3f1fb281e35a966d4a9b01b60db402e7a
-```
-
 ## 2. Store the .diff for each file under ./data/C-Diffs/neomutt/:
 
 Before the following steps, you need to change the `all_test_code` in `config.json` to the repo name you are testing. 
