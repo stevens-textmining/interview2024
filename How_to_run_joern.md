@@ -5,7 +5,7 @@ How to run joern for a git repo with a diff patch:
 ```bash
 docker pull hkadxqq2/vultrigger_fork:latest your_image_name # please give it a name different from vultrigger:v1.0
 
-docker run -it your_image_name /bin/bash # this will create a docker image 
+docker run -v /your_vultrigger_datasample_path:/data/ -it your_image_name /bin/bash # this will create a docker image 
 
 docker ps -a # this will show all the docker containers, including the ID of the container you just built
 
