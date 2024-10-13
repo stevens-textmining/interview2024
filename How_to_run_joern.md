@@ -43,9 +43,9 @@ Run `cv_extract.py` to obtaine the critical variable location, notice it needs t
 
 ```bash
 cd /home/VulTrigger/VulTrigger/
-python3 cv_extract.py neomatt
+python3 cv_extract.py neomatt@@neomutt 9bfab35522301794483f8f9ed60820bdec9be59e
 ```
-The result will be stored under `./cv_result/step1_result.txt`, e.g., it looks like this:
+The result will be stored under `/data/patch_db/data/cv_result/neomutt@@neomutt/9bfab35522301794483f8f9ed60820bdec9be59e/step1_result.txt`, e.g., it looks like this:
 
 ```bash
 =======================complex type===========================
