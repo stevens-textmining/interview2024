@@ -30,14 +30,14 @@ cd /home/
 
 ## 2 How to obtain the critical variable of the diff patch
 
-First change `config.json`'s `all_test_code` to your repo name, e.g., :
+First change `configs/config.json`'s `all_test_code` to your repo name, e.g., :
 
 ```json
 "all_test_code":{
-        "all_diff_path":"/data/patch_db/data/C-Diffs/neomutt@@neomutt/",
-        "all_new_path":"/data/patch_db/data/C-Non_Vulnerable_Files/neomutt@@neomutt/",
-        "all_old_path":"/data/patch_db/data/C-Vulnerable_Files/neomutt@@neomutt/",
-        "all_dep_path":"/data/patch_db/data/Dependency_Files/"
+        "all_diff_path":"/data/data/C-Diffs/neomutt@@neomutt/",
+        "all_new_path":"/data/data/C-Non_Vulnerable_Files/neomutt@@neomutt/",
+        "all_old_path":"/data/data/C-Vulnerable_Files/neomutt@@neomutt/",
+        "all_dep_path":"/data/data/Dependency_Files/"
     }
 ```
 
@@ -47,7 +47,7 @@ Run `cv_extract.py` to obtaine the critical variable location, notice it needs t
 cd /home/VulTrigger/VulTrigger/
 python3 cv_extract.py neomatt@@neomutt 9bfab35522301794483f8f9ed60820bdec9be59e
 ```
-The result will be stored under `/data/patch_db/data/cv_result/neomutt@@neomutt/9bfab35522301794483f8f9ed60820bdec9be59e/step1_result.txt`, e.g., it looks like this:
+The result will be stored under `/data/data/cv_result/neomutt@@neomutt/9bfab35522301794483f8f9ed60820bdec9be59e/step1_result.txt`, e.g., it looks like this:
 
 ```bash
 =======================complex type===========================
